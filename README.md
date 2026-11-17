@@ -1,6 +1,6 @@
 # ApplyKoala MCP server
 
-A remote MCP server for your job search. Connect **Claude Code**, **Codex**, **Claude** or **ChatGPT** to it, and your AI saves the jobs it finds, researches companies with sources, keeps your interview stories and tracks every application in your own [ApplyKoala](https://applykoala.com) job tracker. The next conversation starts where the last one ended.
+A remote MCP server for your job search. Connect **Claude Code**, **Codex**, **Claude**, **ChatGPT** or **Cursor** to it, and your AI saves the jobs it finds, researches companies with sources, keeps your interview stories and tracks every application in your own [ApplyKoala](https://applykoala.com) job tracker. The next conversation starts where the last one ended.
 
 - **Address:** `https://applykoala.com/mcp` (Streamable HTTP)
 - **Sign-in:** OAuth 2.1 with dynamic client registration. You add the address, a page opens, you sign in and press Allow. No API key.
@@ -36,11 +36,25 @@ Settings → Connectors → Add custom connector, and paste `https://applykoala.
 
 In a web browser, open chatgpt.com/plugins (on a phone, switch to the desktop site), choose **Add → Add custom MCP server**, paste the address, keep OAuth and press **Connect**. The phone app cannot add it, but uses it once it is added. In a chat, type `@applykoala`. Step by step: https://applykoala.com/guides/chatgpt-job-search
 
+A ChatGPT dot uses it too once the plugin is added; the first time, press Allow. [Applying for jobs with a dot](https://applykoala.com/guides/apply-for-jobs-with-chatgpt-dots).
+
+### Cursor
+
+Add this to `~/.cursor/mcp.json`, then open Customize in Cursor's sidebar, turn applykoala on and sign in:
+
+```json
+{ "mcpServers": { "applykoala": { "url": "https://applykoala.com/mcp" } } }
+```
+
+[Using Cursor to find jobs and apply](https://applykoala.com/guides/apply-for-jobs-with-cursor).
+
 New to Claude Code or Codex? [How to install them, no coding needed](https://applykoala.com/install-claude-code-or-codex).
 
 Other AI tools that connect to remote MCP servers with OAuth may work too, but we have not tried them.
 
 ## Things to say to your AI
+
+Full workflows with prompts to copy (finding jobs, research, applying, email, interviews): [WORKFLOWS.md](WORKFLOWS.md).
 
 - "Find backend jobs in Singapore that fit my resume and save the good ones."
 - "Look into these three companies. Do they sponsor work visas?"
